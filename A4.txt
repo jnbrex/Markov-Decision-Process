@@ -1,0 +1,10 @@
+To compile: g++ -std=c++11 -o main *.cpp
+To run: ./main
+
+This program solves a Markov Decision Process (MDP). The environment of the program is a 3 X 4 grid, with two terminal states giving score +1 and -1 respectively, and one non-traversable state.  The possible actions are to move LEFT, UP, RIGHT, and DOWN.  The transition model is implemented as follows: 80% chance to move in the intended direction, and a 10% chance to move in each direction at a right angle to the intended direction.
+
+The program explores variation in the "cost of living" and uses value iteration to find the optimal policy.  The program incorporates a binary search to identify the threshold values for the cost of living at which the optimal policy for the agent changes in the environment described above.
+
+In the same environment, a Monte Carlo simulation is implemented, and the final utility of each run is recorded.  The Monte Carlo simulation is run 10, 100, and 1000 times and the results are output to files.
+
+Finally, in a different 3 x 3 environment with a non-terminal reward of +3 for the upper left square and a terminal reward of +10 for the upper right square, differences in the discount rate are explored by using binary search to identify the threshold values for the discount rate at which the optimal policy changes.
